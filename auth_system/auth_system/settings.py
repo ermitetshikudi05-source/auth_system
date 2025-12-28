@@ -16,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ==========================
 SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-dev-key")
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "auth-system-spxr.onrender.com",
