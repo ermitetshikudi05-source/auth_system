@@ -1,0 +1,116 @@
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background-color: #f9fafb;
+}
+
+.card {
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.btn {
+    border-radius: 10px;
+}
+
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+}
+
+.form-control:focus {
+    border-color: #2563eb;
+    box-shadow: none;
+}
+
+.alert {
+    border-radius: 12px;
+}
+
+footer {
+    background: transparent;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] body {
+    background-color: #111827;
+}
+
+[data-bs-theme="dark"] .card {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background: #1f2937 !important;
+}
+
+[data-bs-theme="dark"] .nav-link,
+[data-bs-theme="dark"] .navbar-brand {
+    color: #e5e7eb !important;
+}
+/* Animations subtiles */
+.fade-in {
+    animation: fadeIn 0.4s ease-in-out both;
+}
+
+.slide-up {
+    animation: slideUp 0.4s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Branding */
+.brand-name {
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+}
+
+.brand-dot {
+    width: 10px;
+    height: 10px;
+    background: #2563eb; /* bleu doux */
+    border-radius: 50%;
+}
+
+/* Dark mode branding */
+[data-bs-theme="dark"] .brand-name {
+    color: #e5e7eb;
+}
+
+[data-bs-theme="dark"] .brand-dot {
+    background: #60a5fa;
+}
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 42px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.toggle-password:hover {
+    color: #374151;
+}
+

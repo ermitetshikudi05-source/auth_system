@@ -1,0 +1,24 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-4">
+    <div class="card shadow border-0">
+      <div class="card-body text-center">
+        <h5 class="fw-bold">Utilisateur</h5>
+        <p>{{ request.user.username }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="card shadow border-0">
+      <div class="card-body">
+        <h4 class="fw-bold">Bienvenue 👋</h4>
+        <p>Vous êtes connecté avec succès.</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

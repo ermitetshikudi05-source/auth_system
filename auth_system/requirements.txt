@@ -1,0 +1,3 @@
+gunicorn
+whitenoise
+Django==4.2.27

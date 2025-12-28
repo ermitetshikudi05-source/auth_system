@@ -1,0 +1,106 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-12 col-sm-10 col-md-6 col-lg-4">
+    <div class="card shadow-sm border-0 slide-up">
+      <div class="card-body p-4">
+
+        <!-- Branding -->
+        <div class="text-center mb-4">
+          <i class="bi bi-person-plus-fill fs-3 text-secondary"></i>
+          <h3 class="fw-semibold mt-2">Créer un compte</h3>
+        </div>
+
+        <form method="post" novalidate class="needs-validation">
+          {% csrf_token %}
+
+          <!-- USERNAME -->
+          <div class="mb-3">
+            <label class="form-label">Nom d’utilisateur</label>
+            {{ form.username }}
+            <div class="invalid-feedback">
+              Champ requis
+            </div>
+            {% if form.username.errors %}
+              <div class="text-danger small">
+                {{ form.username.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- EMAIL -->
+          <div class="mb-3">
+            <label class="form-label">Adresse email</label>
+            {{ form.email }}
+            <div class="invalid-feedback">
+              Email invalide
+            </div>
+            {% if form.email.errors %}
+              <div class="text-danger small">
+                {{ form.email.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="mb-3 position-relative">
+            <label class="form-label">Mot de passe</label>
+            {{ form.password }}
+            <i class="bi bi-eye-slash toggle-password"
+               onclick="togglePassword('id_password', this)"></i>
+
+            <div class="invalid-feedback">
+              Mot de passe requis
+            </div>
+
+            {% if form.password.errors %}
+              <div class="text-danger small">
+                {{ form.password.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- CONFIRM PASSWORD -->
+          <div class="mb-3 position-relative">
+            <label class="form-label">Confirmer le mot de passe</label>
+            {{ form.password2 }}
+            <i class="bi bi-eye-slash toggle-password"
+               onclick="togglePassword('id_password2', this)"></i>
+
+            <div class="invalid-feedback">
+              Confirmation requise
+            </div>
+
+            {% if form.password2.errors %}
+              <div class="text-danger small">
+                {{ form.password2.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="d-grid mt-4">
+            <button class="btn btn-dark fw-semibold">
+              Créer le compte
+            </button>
+          </div>
+        </form>
+
+        <hr>
+
+        <div class="text-center small">
+          <span>Déjà un compte ?</span>
+          <a href="{% url 'login' %}" class="fw-semibold text-decoration-none">
+            Connexion
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
